@@ -14,11 +14,15 @@ print("start")
 if let fileContent = FileManager.default.contents(atPath: "/Users/liyufeng/git/caiHub/antlr_swift_demo/OC/OC/objc/demo.m") {
     if let str = String(data: fileContent, encoding: .utf8) {
         do {
+            
             let input = ANTLRInputStream(str)
             let lexer = ObjectiveCLexer(input)
             let tokens = CommonTokenStream(lexer)
+            let preParser = try ObjectiveCPreprocessorParser(tokens)
             let parser = try ObjectiveCParser(tokens)
+            let preTree = try preParser.directive()
             let tree = try parser.translationUnit()
+            try ParseTreeWalker.DEFAULT.walk(OCPreprocessorListener(), preTree)
             try ParseTreeWalker.DEFAULT.walk(OCListener(), tree)
         } catch {
             print(error)

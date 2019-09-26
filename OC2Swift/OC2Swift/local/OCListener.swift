@@ -14,93 +14,6 @@ class OCListener {
 }
 
 extension OCListener : ObjectiveCParserListener {
-    func enterSelector(_ ctx: ObjectiveCParser.SelectorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitSelector(_ ctx: ObjectiveCParser.SelectorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterReceiver(_ ctx: ObjectiveCParser.ReceiverContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitReceiver(_ ctx: ObjectiveCParser.ReceiverContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterDeclaration(_ ctx: ObjectiveCParser.DeclarationContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitDeclaration(_ ctx: ObjectiveCParser.DeclarationContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterEnumerator(_ ctx: ObjectiveCParser.EnumeratorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitEnumerator(_ ctx: ObjectiveCParser.EnumeratorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterPointer(_ ctx: ObjectiveCParser.PointerContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitPointer(_ ctx: ObjectiveCParser.PointerContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterDeclarator(_ ctx: ObjectiveCParser.DeclaratorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitDeclarator(_ ctx: ObjectiveCParser.DeclaratorContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterStatement(_ ctx: ObjectiveCParser.StatementContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitStatement(_ ctx: ObjectiveCParser.StatementContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterExpression(_ ctx: ObjectiveCParser.ExpressionContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitExpression(_ ctx: ObjectiveCParser.ExpressionContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterInitializer(_ ctx: ObjectiveCParser.InitializerContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitInitializer(_ ctx: ObjectiveCParser.InitializerContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterConstant(_ ctx: ObjectiveCParser.ConstantContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitConstant(_ ctx: ObjectiveCParser.ConstantContext) {
-        onListener(functionName: #function)
-    }
-    
-    func enterIdentifier(_ ctx: ObjectiveCParser.IdentifierContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitIdentifier(_ ctx: ObjectiveCParser.IdentifierContext) {
-        onListener(functionName: #function)
-    }
     
     func enterTranslationUnit(_ ctx: ObjectiveCParser.TranslationUnitContext) {
         onListener(functionName: #function)
@@ -342,6 +255,14 @@ extension OCListener : ObjectiveCParserListener {
         onListener(functionName: #function)
     }
     
+    func enterSelector(_ ctx: ObjectiveCParser.SelectorContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitSelector(_ ctx: ObjectiveCParser.SelectorContext) {
+        onListener(functionName: #function)
+    }
+    
     func enterMethodType(_ ctx: ObjectiveCParser.MethodTypeContext) {
         onListener(functionName: #function)
     }
@@ -459,6 +380,14 @@ extension OCListener : ObjectiveCParserListener {
     }
     
     func exitMessageExpression(_ ctx: ObjectiveCParser.MessageExpressionContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterReceiver(_ ctx: ObjectiveCParser.ReceiverContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitReceiver(_ ctx: ObjectiveCParser.ReceiverContext) {
         onListener(functionName: #function)
     }
     
@@ -635,6 +564,14 @@ extension OCListener : ObjectiveCParserListener {
     }
     
     func exitAttributeParameterAssignment(_ ctx: ObjectiveCParser.AttributeParameterAssignmentContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterDeclaration(_ ctx: ObjectiveCParser.DeclarationContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitDeclaration(_ ctx: ObjectiveCParser.DeclarationContext) {
         onListener(functionName: #function)
     }
     
@@ -846,6 +783,14 @@ extension OCListener : ObjectiveCParserListener {
         onListener(functionName: #function)
     }
     
+    func enterEnumerator(_ ctx: ObjectiveCParser.EnumeratorContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitEnumerator(_ ctx: ObjectiveCParser.EnumeratorContext) {
+        onListener(functionName: #function)
+    }
+    
     func enterEnumeratorIdentifier(_ ctx: ObjectiveCParser.EnumeratorIdentifierContext) {
         onListener(functionName: #function)
     }
@@ -875,6 +820,14 @@ extension OCListener : ObjectiveCParserListener {
     }
     
     func exitParameterList(_ ctx: ObjectiveCParser.ParameterListContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterPointer(_ ctx: ObjectiveCParser.PointerContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitPointer(_ ctx: ObjectiveCParser.PointerContext) {
         onListener(functionName: #function)
     }
     
@@ -947,6 +900,22 @@ extension OCListener : ObjectiveCParserListener {
     }
     
     func exitParameterDeclaration(_ ctx: ObjectiveCParser.ParameterDeclarationContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterDeclarator(_ ctx: ObjectiveCParser.DeclaratorContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitDeclarator(_ ctx: ObjectiveCParser.DeclaratorContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterStatement(_ ctx: ObjectiveCParser.StatementContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitStatement(_ ctx: ObjectiveCParser.StatementContext) {
         onListener(functionName: #function)
     }
     
@@ -1078,6 +1047,14 @@ extension OCListener : ObjectiveCParserListener {
         onListener(functionName: #function)
     }
     
+    func enterExpression(_ ctx: ObjectiveCParser.ExpressionContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitExpression(_ ctx: ObjectiveCParser.ExpressionContext) {
+        onListener(functionName: #function)
+    }
+    
     func enterAssignmentOperator(_ ctx: ObjectiveCParser.AssignmentOperatorContext) {
         onListener(functionName: #function)
     }
@@ -1091,6 +1068,14 @@ extension OCListener : ObjectiveCParserListener {
     }
     
     func exitCastExpression(_ ctx: ObjectiveCParser.CastExpressionContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterInitializer(_ ctx: ObjectiveCParser.InitializerContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitInitializer(_ ctx: ObjectiveCParser.InitializerContext) {
         onListener(functionName: #function)
     }
     
@@ -1126,11 +1111,11 @@ extension OCListener : ObjectiveCParserListener {
         onListener(functionName: #function)
     }
     
-    func enterPostfix(_ ctx: ObjectiveCParser.PostfixContext) {
+    func enterOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext) {
         onListener(functionName: #function)
     }
     
-    func exitPostfix(_ ctx: ObjectiveCParser.PostfixContext) {
+    func exitOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext) {
         onListener(functionName: #function)
     }
     
@@ -1158,11 +1143,27 @@ extension OCListener : ObjectiveCParserListener {
         onListener(functionName: #function)
     }
     
+    func enterConstant(_ ctx: ObjectiveCParser.ConstantContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitConstant(_ ctx: ObjectiveCParser.ConstantContext) {
+        onListener(functionName: #function)
+    }
+    
     func enterStringLiteral(_ ctx: ObjectiveCParser.StringLiteralContext) {
         onListener(functionName: #function)
     }
     
     func exitStringLiteral(_ ctx: ObjectiveCParser.StringLiteralContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterIdentifier(_ ctx: ObjectiveCParser.IdentifierContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitIdentifier(_ ctx: ObjectiveCParser.IdentifierContext) {
         onListener(functionName: #function)
     }
     

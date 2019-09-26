@@ -1651,17 +1651,17 @@ public protocol ObjectiveCParserListener: ParseTreeListener {
 	 */
 	func exitPostfixExpression(_ ctx: ObjectiveCParser.PostfixExpressionContext)
 	/**
-	 * Enter a parse tree produced by {@link ObjectiveCParser#postfix}.
+	 * Enter a parse tree produced by {@link ObjectiveCParser#ocpostfix}.
 	 - Parameters:
 	   - ctx: the parse tree
 	 */
-	func enterPostfix(_ ctx: ObjectiveCParser.PostfixContext)
+	func enterOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext)
 	/**
-	 * Exit a parse tree produced by {@link ObjectiveCParser#postfix}.
+	 * Exit a parse tree produced by {@link ObjectiveCParser#ocpostfix}.
 	 - Parameters:
 	   - ctx: the parse tree
 	 */
-	func exitPostfix(_ ctx: ObjectiveCParser.PostfixContext)
+	func exitOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext)
 	/**
 	 * Enter a parse tree produced by {@link ObjectiveCParser#argumentExpressionList}.
 	 - Parameters:

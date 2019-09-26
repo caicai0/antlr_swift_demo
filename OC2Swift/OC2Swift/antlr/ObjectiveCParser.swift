@@ -128,7 +128,7 @@ open class ObjectiveCParser: Parser {
             RULE_expressions = 128, RULE_expression = 129, RULE_assignmentOperator = 130, 
             RULE_castExpression = 131, RULE_initializer = 132, RULE_constantExpression = 133, 
             RULE_unaryExpression = 134, RULE_unaryOperator = 135, RULE_postfixExpression = 136, 
-            RULE_postfix = 137, RULE_argumentExpressionList = 138, RULE_argumentExpression = 139, 
+            RULE_ocpostfix = 137, RULE_argumentExpressionList = 138, RULE_argumentExpression = 139, 
             RULE_primaryExpression = 140, RULE_constant = 141, RULE_stringLiteral = 142, 
             RULE_identifier = 143
 
@@ -169,7 +169,7 @@ open class ObjectiveCParser: Parser {
 		"doStatement", "forStatement", "forLoopInitializer", "forInStatement", 
 		"jumpStatement", "expressions", "expression", "assignmentOperator", "castExpression", 
 		"initializer", "constantExpression", "unaryExpression", "unaryOperator", 
-		"postfixExpression", "postfix", "argumentExpressionList", "argumentExpression", 
+		"postfixExpression", "ocpostfix", "argumentExpressionList", "argumentExpression", 
 		"primaryExpression", "constant", "stringLiteral", "identifier"
 	]
 
@@ -13923,12 +13923,12 @@ open class ObjectiveCParser: Parser {
 				return getRuleContext(PrimaryExpressionContext.self, 0)
 			}
 			open
-			func postfix() -> [PostfixContext] {
-				return getRuleContexts(PostfixContext.self)
+			func ocpostfix() -> [OcpostfixContext] {
+				return getRuleContexts(OcpostfixContext.self)
 			}
 			open
-			func postfix(_ i: Int) -> PostfixContext? {
-				return getRuleContext(PostfixContext.self, i)
+			func ocpostfix(_ i: Int) -> OcpostfixContext? {
+				return getRuleContext(OcpostfixContext.self, i)
 			}
 			open
 			func postfixExpression() -> PostfixExpressionContext? {
@@ -13990,7 +13990,7 @@ open class ObjectiveCParser: Parser {
 			while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
 				if ( _alt==1 ) {
 					setState(1595)
-					try postfix()
+					try ocpostfix()
 
 			 
 				}
@@ -14036,7 +14036,7 @@ open class ObjectiveCParser: Parser {
 					while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
 						if ( _alt==1 ) {
 							setState(1604)
-							try postfix()
+							try ocpostfix()
 
 					 
 						}
@@ -14062,7 +14062,7 @@ open class ObjectiveCParser: Parser {
 		return _localctx;
 	}
 
-	public class PostfixContext: ParserRuleContext {
+	public class OcpostfixContext: ParserRuleContext {
 		open var _RP: Token!
 		open var macroArguments: [Token] = [Token]()
 		open var _tset3106: Token!
@@ -14113,25 +14113,25 @@ open class ObjectiveCParser: Parser {
 			}
 		override open
 		func getRuleIndex() -> Int {
-			return ObjectiveCParser.RULE_postfix
+			return ObjectiveCParser.RULE_ocpostfix
 		}
 		override open
 		func enterRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCParserListener {
-				listener.enterPostfix(self)
+				listener.enterOcpostfix(self)
 			}
 		}
 		override open
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCParserListener {
-				listener.exitPostfix(self)
+				listener.exitOcpostfix(self)
 			}
 		}
 	}
 	@discardableResult
-	 open func postfix() throws -> PostfixContext {
-		var _localctx: PostfixContext = PostfixContext(_ctx, getState())
-		try enterRule(_localctx, 274, ObjectiveCParser.RULE_postfix)
+	 open func ocpostfix() throws -> OcpostfixContext {
+		var _localctx: OcpostfixContext = OcpostfixContext(_ctx, getState())
+		try enterRule(_localctx, 274, ObjectiveCParser.RULE_ocpostfix)
 		var _la: Int = 0
 		defer {
 	    		try! exitRule()
@@ -14200,20 +14200,20 @@ open class ObjectiveCParser: Parser {
 		 				break
 		 			case 2:
 		 				setState(1626)
-		 				_localctx.castdown(PostfixContext.self)._tset3106 = try _input.LT(1)
+		 				_localctx.castdown(OcpostfixContext.self)._tset3106 = try _input.LT(1)
 		 				_la = try _input.LA(1)
 		 				if (_la <= 0 || (//closure
 		 				 { () -> Bool in
 		 				      let testSet: Bool = _la == ObjectiveCParser.Tokens.RP.rawValue
 		 				      return testSet
 		 				 }())) {
-		 					_localctx.castdown(PostfixContext.self)._tset3106 = try _errHandler.recoverInline(self) as Token
+		 					_localctx.castdown(OcpostfixContext.self)._tset3106 = try _errHandler.recoverInline(self) as Token
 		 				}
 		 				else {
 		 					_errHandler.reportMatch(self)
 		 					try consume()
 		 				}
-		 				_localctx.castdown(PostfixContext.self).macroArguments.append(_localctx.castdown(PostfixContext.self)._tset3106)
+		 				_localctx.castdown(OcpostfixContext.self).macroArguments.append(_localctx.castdown(OcpostfixContext.self)._tset3106)
 
 		 				break
 		 			default: break
@@ -14249,14 +14249,14 @@ open class ObjectiveCParser: Parser {
 		 	case 4:
 		 		try enterOuterAlt(_localctx, 4)
 		 		setState(1632)
-		 		_localctx.castdown(PostfixContext.self).op = try _input.LT(1)
+		 		_localctx.castdown(OcpostfixContext.self).op = try _input.LT(1)
 		 		_la = try _input.LA(1)
 		 		if (!(//closure
 		 		 { () -> Bool in
 		 		      let testSet: Bool = _la == ObjectiveCParser.Tokens.INC.rawValue || _la == ObjectiveCParser.Tokens.DEC.rawValue
 		 		      return testSet
 		 		 }())) {
-		 			_localctx.castdown(PostfixContext.self).op = try _errHandler.recoverInline(self) as Token
+		 			_localctx.castdown(OcpostfixContext.self).op = try _errHandler.recoverInline(self) as Token
 		 		}
 		 		else {
 		 			_errHandler.reportMatch(self)
