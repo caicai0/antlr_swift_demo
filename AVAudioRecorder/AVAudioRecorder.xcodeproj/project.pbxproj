@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B7B7FD9233DE88B00EBAA38 /* LameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7B7FD4233DE88A00EBAA38 /* LameTool.m */; };
+		4B7B7FE2233E0BB800EBAA38 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7B7FE0233E0BB800EBAA38 /* libmp3lame.a */; };
 		4B8CEB03233C7D98009386E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEB02233C7D98009386E4 /* AppDelegate.swift */; };
 		4B8CEB05233C7D98009386E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEB04233C7D98009386E4 /* SceneDelegate.swift */; };
 		4B8CEB07233C7D98009386E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEB06233C7D98009386E4 /* ViewController.swift */; };
@@ -36,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B7B7FD4233DE88A00EBAA38 /* LameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameTool.m; sourceTree = "<group>"; };
+		4B7B7FD8233DE88A00EBAA38 /* LameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameTool.h; sourceTree = "<group>"; };
+		4B7B7FDE233DEA1400EBAA38 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		4B7B7FE0233E0BB800EBAA38 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		4B7B7FE1233E0BB800EBAA38 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		4B8CEAFF233C7D98009386E4 /* AVAudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVAudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8CEB02233C7D98009386E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B8CEB04233C7D98009386E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7B7FE2233E0BB800EBAA38 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +86,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B7B7FD3233DE88A00EBAA38 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				4B7B7FDF233E0BB800EBAA38 /* lame */,
+				4B7B7FD4233DE88A00EBAA38 /* LameTool.m */,
+				4B7B7FD8233DE88A00EBAA38 /* LameTool.h */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		4B7B7FDF233E0BB800EBAA38 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				4B7B7FE0233E0BB800EBAA38 /* libmp3lame.a */,
+				4B7B7FE1233E0BB800EBAA38 /* lame.h */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
 		4B8CEAF6233C7D98009386E4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +128,8 @@
 		4B8CEB01233C7D98009386E4 /* AVAudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				4B7B7FDE233DEA1400EBAA38 /* Bridge.h */,
+				4B7B7FD3233DE88A00EBAA38 /* lame */,
 				4B8CEB02233C7D98009386E4 /* AppDelegate.swift */,
 				4B8CEB04233C7D98009386E4 /* SceneDelegate.swift */,
 				4B8CEB06233C7D98009386E4 /* ViewController.swift */,
@@ -262,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7B7FD9233DE88B00EBAA38 /* LameTool.m in Sources */,
 				4B8CEB07233C7D98009386E4 /* ViewController.swift in Sources */,
 				4B8CEB33233CB3E8009386E4 /* PlayController.swift in Sources */,
 				4B8CEB03233C7D98009386E4 /* AppDelegate.swift in Sources */,
@@ -445,8 +475,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AVAudioRecorder/lame/lib",
+					"$(PROJECT_DIR)/AVAudioRecorder/lame/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstore.AVAudioRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = AVAudioRecorder/Bridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,8 +499,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AVAudioRecorder/lame/lib",
+					"$(PROJECT_DIR)/AVAudioRecorder/lame/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstore.AVAudioRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = AVAudioRecorder/Bridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

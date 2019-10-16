@@ -14,19 +14,43 @@ class OCPreprocessorListener {
 }
 
 extension OCPreprocessorListener : ObjectiveCPreprocessorParserListener {
-    func visitTerminal(_ node: TerminalNode) {
+    func enterPreprocessorCode(_ ctx: ObjectiveCPreprocessorParser.PreprocessorCodeContext) {
         onListener(functionName: #function)
     }
     
-    func visitErrorNode(_ node: ErrorNode) {
+    func exitPreprocessorCode(_ ctx: ObjectiveCPreprocessorParser.PreprocessorCodeContext) {
         onListener(functionName: #function)
     }
     
-    func enterEveryRule(_ ctx: ParserRuleContext) throws {
+    func enterPreprocessorDirective(_ ctx: ObjectiveCPreprocessorParser.PreprocessorDirectiveContext) {
         onListener(functionName: #function)
     }
     
-    func exitEveryRule(_ ctx: ParserRuleContext) throws {
+    func exitPreprocessorDirective(_ ctx: ObjectiveCPreprocessorParser.PreprocessorDirectiveContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterObjectiveCDocument(_ ctx: ObjectiveCPreprocessorParser.ObjectiveCDocumentContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitObjectiveCDocument(_ ctx: ObjectiveCPreprocessorParser.ObjectiveCDocumentContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterText(_ ctx: ObjectiveCPreprocessorParser.TextContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitText(_ ctx: ObjectiveCPreprocessorParser.TextContext) {
+        onListener(functionName: #function)
+    }
+    
+    func enterCode(_ ctx: ObjectiveCPreprocessorParser.CodeContext) {
+        onListener(functionName: #function)
+    }
+    
+    func exitCode(_ ctx: ObjectiveCPreprocessorParser.CodeContext) {
         onListener(functionName: #function)
     }
     
@@ -70,14 +94,6 @@ extension OCPreprocessorListener : ObjectiveCPreprocessorParserListener {
         onListener(functionName: #function)
     }
     
-    func enterPreprocessorWarning(_ ctx: ObjectiveCPreprocessorParser.PreprocessorWarningContext) {
-        onListener(functionName: #function)
-    }
-    
-    func exitPreprocessorWarning(_ ctx: ObjectiveCPreprocessorParser.PreprocessorWarningContext) {
-        onListener(functionName: #function)
-    }
-    
     func enterPreprocessorDefine(_ ctx: ObjectiveCPreprocessorParser.PreprocessorDefineContext) {
         onListener(functionName: #function)
     }
@@ -86,11 +102,11 @@ extension OCPreprocessorListener : ObjectiveCPreprocessorParserListener {
         onListener(functionName: #function)
     }
     
-    func enterDirectiveText(_ ctx: ObjectiveCPreprocessorParser.DirectiveTextContext) {
+    func enterDirective_text(_ ctx: ObjectiveCPreprocessorParser.Directive_textContext) {
         onListener(functionName: #function)
     }
     
-    func exitDirectiveText(_ ctx: ObjectiveCPreprocessorParser.DirectiveTextContext) {
+    func exitDirective_text(_ ctx: ObjectiveCPreprocessorParser.Directive_textContext) {
         onListener(functionName: #function)
     }
     
@@ -140,6 +156,22 @@ extension OCPreprocessorListener : ObjectiveCPreprocessorParserListener {
     
     func exitPreprocessorDefined(_ ctx: ObjectiveCPreprocessorParser.PreprocessorDefinedContext) {
         onListener(functionName: #function)
+    }
+    
+    func visitTerminal(_ node: TerminalNode) {
+        onListener(functionName: #function)
+    }
+    
+    func visitErrorNode(_ node: ErrorNode) {
+        onListener(functionName: #function)
+    }
+    
+    func enterEveryRule(_ ctx: ParserRuleContext) throws {
+//        onListener(functionName: #function)
+    }
+    
+    func exitEveryRule(_ ctx: ParserRuleContext) throws {
+//        onListener(functionName: #function)
     }
 }
 

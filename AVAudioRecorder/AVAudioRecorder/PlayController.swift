@@ -40,7 +40,7 @@ class PlayController : UIViewController {
     
     @objc func play() {
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last ?? ""
-        let filePath = path + "/1.caf"
+        let filePath = path + "/1.mp3"
         let url = URL(fileURLWithPath: filePath)
         do{
             player = try AVAudioPlayer(contentsOf: url)

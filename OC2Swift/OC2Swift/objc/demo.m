@@ -10,4 +10,8 @@
 
 @implementation demo
 
+-(void)functions{
+    
+}
+
 @end

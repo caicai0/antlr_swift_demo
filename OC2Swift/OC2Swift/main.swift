@@ -11,19 +11,21 @@ import Antlr4
 
 print("start")
 
-if let fileContent = FileManager.default.contents(atPath: "/Users/liyufeng/git/caiHub/antlr_swift_demo/OC/OC/objc/demo.m") {
+if let fileContent = FileManager.default.contents(atPath: "/Users/liyufeng/git/caiHub/antlr_swift_demo/OC/OC/objc/demo.h") {
     if let str = String(data: fileContent, encoding: .utf8) {
         do {
-            
             let input = ANTLRInputStream(str)
-            let lexer = ObjectiveCLexer(input)
-            let tokens = CommonTokenStream(lexer)
-            let preParser = try ObjectiveCPreprocessorParser(tokens)
-            let parser = try ObjectiveCParser(tokens)
-            let preTree = try preParser.directive()
-            let tree = try parser.translationUnit()
+            let preLexer = ObjectiveCPreprocessorLexer(input)
+            let preTokens = CommonTokenStream(preLexer)
+            let preParser = try ObjectiveCPreprocessorParser(preTokens)
+            let preTree = try preParser.objectiveCDocument()
             try ParseTreeWalker.DEFAULT.walk(OCPreprocessorListener(), preTree)
-            try ParseTreeWalker.DEFAULT.walk(OCListener(), tree)
+            
+//            let lexer = ObjectiveCLexer(input)
+//            let tokens = CommonTokenStream(lexer)
+//            let parser = try ObjectiveCParser(tokens)
+//            let tree = try parser.translationUnit()
+//            try ParseTreeWalker.DEFAULT.walk(OCListener(), tree)
         } catch {
             print(error)
         }

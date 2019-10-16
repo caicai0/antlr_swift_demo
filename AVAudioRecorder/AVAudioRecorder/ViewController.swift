@@ -130,8 +130,9 @@ class ViewController: UIViewController {
     func prepareRecorder() {
         var audioSetting : [String:Any]  = [:]
         audioSetting[AVSampleRateKey] = 44100
-        audioSetting[AVNumberOfChannelsKey] = 2
+        audioSetting[AVNumberOfChannelsKey] = 1
         audioSetting[AVFormatIDKey] = kAudioFormatLinearPCM
+        audioSetting[AVLinearPCMIsFloatKey] = false
         
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last ?? ""
         let filePath = path + "/1.caf"
@@ -168,6 +169,11 @@ extension ViewController : AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         print(recorder,flag)
+        if flag {
+            let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last ?? ""
+            let filePath = path + "/1.caf"
+            LameTool.audio(toMP3: filePath, isDeleteSourchFile: true)
+        }
     }
 }
 
