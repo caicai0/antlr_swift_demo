@@ -9,10 +9,11 @@
 import Foundation
 
 protocol AopManangerDelegate {
-    func afterInvok(info: AspectInfo,userInfo: Any)
+    func afterInvocation(info: AspectInfo,userInfo: Any)
 }
 
 class AopManager {
+    static let share = AopManager()
     var tokens = [AspectToken]()
     var delegate: AopManangerDelegate? = nil
     
@@ -29,7 +30,7 @@ class AopManager {
             do{
                 let token = try aclass.aspect_hook(selector, with: [], usingBlock: { (info: AspectInfo) in
                     DispatchQueue.global().async {
-                        self.afterInvok(info: info, userInfo: userInfo)
+                        self.afterInvocation(info: info, userInfo: userInfo)
                     }
                 })
                 self.tokens.append(token)
@@ -39,25 +40,9 @@ class AopManager {
         }
     }
     
-    func addAop(cls: String,csel: String, userInfo: Any) {
-        if let aclass = NSClassFromString(cls){
-            let selector = NSSelectorFromString(csel)
-            do{
-                let token = try aclass.aspect_hook(selector, with: [], usingBlock: { (info: AspectInfo) in
-                    DispatchQueue.global().async {
-                        self.afterInvok(info: info, userInfo: userInfo)
-                    }
-                })
-                self.tokens.append(token)
-            }catch{
-                print(error)
-            }
-        }
-    }
-    
-    func afterInvok(info: AspectInfo, userInfo: Any) {
+    func afterInvocation(info: AspectInfo, userInfo: Any) {
         if let delegate = delegate {
-            delegate.afterInvok(info: info, userInfo: userInfo)
+            delegate.afterInvocation(info: info, userInfo: userInfo)
         }
     }
 }

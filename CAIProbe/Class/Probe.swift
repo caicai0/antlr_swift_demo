@@ -32,39 +32,22 @@ class Probe: NSObject {
     }
     
     func analysisAllPlans() {
-        //清除原来的
-        for token in tokens {
-            token.remove()
-        }
-        self.tokens.removeAll()
+        AopManager.share.delegate = self
+        AopManager.share.removeAllTokens()
         
         for plan in self.plans {
             if plan.type == 0 {
                 //一次性统计
             }else if plan.type == 1 || plan.type == 2 {
-                if let aclass = NSClassFromString(plan.classPath){
-                    let selector = NSSelectorFromString(plan.selector)
-                    do{
-                        let token = try aclass.aspect_hook(selector, with: [], usingBlock: { (info: AspectInfo) in
-                            DispatchQueue.global().async {
-                                self.onHook(info: info, plan: plan)
-                            }
-                        })
-                        self.tokens.append(token)
-                    }catch{
-                        print(error)
-                    }
-                }
+                AopManager.share.addAop(cls: plan.classPath, sel: plan.selector, userInfo: plan)
             }
         }
     }
-    
-    func onHook(info: AspectInfo, plan: Plan) {
-        if plan.type == 0 {
-            
-        }else if plan.type == 1 {
-            
-        }else if plan.type == 2 {
+}
+
+extension Probe: AopManangerDelegate {
+    func afterInvocation(info: AspectInfo, userInfo: Any) {
+        if let plan = userInfo as? Plan {
             
         }
     }
