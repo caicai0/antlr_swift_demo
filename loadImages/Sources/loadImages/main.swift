@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import SQLite3
 
 print("Hello, World!")
 
-let csvFile = "/Users/liyufeng/Desktop/jpegs/images.csv"
-let outPath = "/Users/liyufeng/Desktop/jpegs/images/"
+let csvFile = "/Volumes/64/images.csv"
+let outPath = "/Volumes/64/images/"
 
 let loadQueue = OperationQueue()
-loadQueue.maxConcurrentOperationCount = 10
+loadQueue.maxConcurrentOperationCount = 0
 
 let source:String = try NSString(contentsOfFile: csvFile, encoding: String.Encoding.utf8.rawValue) as String
 let lines = source.split(separator: "\n")
@@ -33,6 +34,7 @@ func startNext() {
         index = index + 1
         print(index)
     }
+    loadQueue.maxConcurrentOperationCount = 10
     loadQueue.waitUntilAllOperationsAreFinished()
     print(loadQueue.operations.count)
 }

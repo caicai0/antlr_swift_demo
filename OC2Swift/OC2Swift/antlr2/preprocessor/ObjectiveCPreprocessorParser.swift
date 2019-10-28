@@ -109,6 +109,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitObjectiveCDocument(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitObjectiveCDocument(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitObjectiveCDocument(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	@discardableResult
 	 open func objectiveCDocument() throws -> ObjectiveCDocumentContext {
@@ -195,6 +207,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorDirective(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorDirective(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorDirective(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorCodeContext: TextContext {
 			open
@@ -217,6 +241,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorCode(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorCode(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorCode(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -298,6 +334,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitCode(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitCode(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitCode(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -386,6 +434,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorDef(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorDef(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorDef(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorErrorContext: DirectiveContext {
 			open
@@ -412,6 +472,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorError(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorError(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorError(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -454,6 +526,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorConditional(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorConditional(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorConditional(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorImportContext: DirectiveContext {
 			open
@@ -486,6 +570,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorImport(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorImport(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorImport(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorPragmaContext: DirectiveContext {
 			open
@@ -512,6 +608,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorPragma(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorPragma(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorPragma(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -544,6 +652,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorDefine(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorDefine(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorDefine(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -727,6 +847,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitDirective_text(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitDirective_text(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitDirective_text(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	@discardableResult
 	 open func directive_text() throws -> Directive_textContext {
@@ -808,6 +940,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorParenthesis(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorParenthesis(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorParenthesis(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorNotContext: Preprocessor_expressionContext {
 			open
@@ -834,6 +978,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorNot(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorNot(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorNot(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -897,6 +1053,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorBinary(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorBinary(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorBinary(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorConstantContext: Preprocessor_expressionContext {
 			open
@@ -931,6 +1099,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorConstant(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorConstant(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorConstant(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}
@@ -969,6 +1149,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 				listener.exitPreprocessorConditionalSymbol(self)
 			}
 		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorConditionalSymbol(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorConditionalSymbol(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
+			}
+		}
 	}
 	public class PreprocessorDefinedContext: Preprocessor_expressionContext {
 			open
@@ -1003,6 +1195,18 @@ open class ObjectiveCPreprocessorParser: Parser {
 		func exitRule(_ listener: ParseTreeListener) {
 			if let listener = listener as? ObjectiveCPreprocessorParserListener {
 				listener.exitPreprocessorDefined(self)
+			}
+		}
+		override open
+		func accept<T>(_ visitor: ParseTreeVisitor<T>) -> T? {
+			if let visitor = visitor as? ObjectiveCPreprocessorParserVisitor {
+			    return visitor.visitPreprocessorDefined(self)
+			}
+			else if let visitor = visitor as? ObjectiveCPreprocessorParserBaseVisitor {
+			    return visitor.visitPreprocessorDefined(self)
+			}
+			else {
+			     return visitor.visitChildren(self)
 			}
 		}
 	}

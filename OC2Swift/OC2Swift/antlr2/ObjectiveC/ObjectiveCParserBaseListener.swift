@@ -1796,13 +1796,13 @@ open class ObjectiveCParserBaseListener: ObjectiveCParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	open func enterPostfix(_ ctx: ObjectiveCParser.PostfixContext) { }
+	open func enterOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	open func exitPostfix(_ ctx: ObjectiveCParser.PostfixContext) { }
+	open func exitOcpostfix(_ ctx: ObjectiveCParser.OcpostfixContext) { }
 
 	/**
 	 * {@inheritDoc}

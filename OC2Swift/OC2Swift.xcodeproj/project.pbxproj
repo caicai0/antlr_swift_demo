@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B379685235DA8D2006AF571 /* ObjectiveCPreprocessorParserVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B379683235DA8D2006AF571 /* ObjectiveCPreprocessorParserVisitor.swift */; };
+		4B379686235DA8D2006AF571 /* ObjectiveCPreprocessorParserBaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B379684235DA8D2006AF571 /* ObjectiveCPreprocessorParserBaseVisitor.swift */; };
+		4B379689235DA8DC006AF571 /* ObjectiveCParserVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B379687235DA8DB006AF571 /* ObjectiveCParserVisitor.swift */; };
+		4B37968A235DA8DC006AF571 /* ObjectiveCParserBaseVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B379688235DA8DB006AF571 /* ObjectiveCParserBaseVisitor.swift */; };
 		4B8CEACC233B5186009386E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEACB233B5186009386E4 /* main.swift */; };
 		4B8CEAE8233B5267009386E4 /* OCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEAD3233B5267009386E4 /* OCListener.swift */; };
 		4B8CEAE9233B5267009386E4 /* OCcontext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CEAD4233B5267009386E4 /* OCcontext.swift */; };
@@ -53,6 +57,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B379683235DA8D2006AF571 /* ObjectiveCPreprocessorParserVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCPreprocessorParserVisitor.swift; sourceTree = "<group>"; };
+		4B379684235DA8D2006AF571 /* ObjectiveCPreprocessorParserBaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCPreprocessorParserBaseVisitor.swift; sourceTree = "<group>"; };
+		4B379687235DA8DB006AF571 /* ObjectiveCParserVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCParserVisitor.swift; sourceTree = "<group>"; };
+		4B379688235DA8DB006AF571 /* ObjectiveCParserBaseVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCParserBaseVisitor.swift; sourceTree = "<group>"; };
 		4B8CEAC8233B5186009386E4 /* OC2Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OC2Swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8CEACB233B5186009386E4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4B8CEAD3233B5267009386E4 /* OCListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCListener.swift; sourceTree = "<group>"; };
@@ -170,6 +178,8 @@
 		4B8CEB55233DB861009386E4 /* preprocessor */ = {
 			isa = PBXGroup;
 			children = (
+				4B379684235DA8D2006AF571 /* ObjectiveCPreprocessorParserBaseVisitor.swift */,
+				4B379683235DA8D2006AF571 /* ObjectiveCPreprocessorParserVisitor.swift */,
 				4B8CEB7D233DBEA4009386E4 /* ObjectiveCPreprocessorLexer.g4 */,
 				4B8CEB87233DBEA4009386E4 /* ObjectiveCPreprocessorLexer.interp */,
 				4B8CEB7C233DBEA4009386E4 /* ObjectiveCPreprocessorLexer.swift */,
@@ -189,6 +199,8 @@
 		4B8CEB62233DB862009386E4 /* ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				4B379688235DA8DB006AF571 /* ObjectiveCParserBaseVisitor.swift */,
+				4B379687235DA8DB006AF571 /* ObjectiveCParserVisitor.swift */,
 				4B8CEB63233DB862009386E4 /* ObjectiveCLexer.tokens */,
 				4B8CEB64233DB862009386E4 /* ObjectiveCLexer.swift */,
 				4B8CEB65233DB862009386E4 /* ObjectiveCParser.interp */,
@@ -273,12 +285,16 @@
 				4B8CEB89233DBEA4009386E4 /* ObjectiveCPreprocessorParser.swift in Sources */,
 				4B8CEAEA233B5267009386E4 /* demo.m in Sources */,
 				4B8CEB8B233DBEA4009386E4 /* ObjectiveCPreprocessorLexerATN.swift in Sources */,
+				4B379686235DA8D2006AF571 /* ObjectiveCPreprocessorParserBaseVisitor.swift in Sources */,
 				4B8CEB77233DB862009386E4 /* ObjectiveCParserListener.swift in Sources */,
 				4B8CEB8A233DBEA4009386E4 /* ObjectiveCPreprocessorParserListener.swift in Sources */,
 				4B8CEB8C233DBEA4009386E4 /* ObjectiveCPreprocessorParserParserATN.swift in Sources */,
 				4B8CEB76233DB862009386E4 /* ObjectiveCLexer.swift in Sources */,
 				4B8CEB7A233DB862009386E4 /* ObjectiveCParserBaseListener.swift in Sources */,
 				4B8CEB6F233DB862009386E4 /* ObjectiveCPreprocessor.java in Sources */,
+				4B37968A235DA8DC006AF571 /* ObjectiveCParserBaseVisitor.swift in Sources */,
+				4B379689235DA8DC006AF571 /* ObjectiveCParserVisitor.swift in Sources */,
+				4B379685235DA8D2006AF571 /* ObjectiveCPreprocessorParserVisitor.swift in Sources */,
 				4B8CEAE8233B5267009386E4 /* OCListener.swift in Sources */,
 				4B8CEB79233DB862009386E4 /* ObjectiveCParser.swift in Sources */,
 				4B8CEB78233DB862009386E4 /* ObjectiveCLexerATN.swift in Sources */,

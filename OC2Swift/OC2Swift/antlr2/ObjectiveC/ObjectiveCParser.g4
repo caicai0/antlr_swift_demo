@@ -744,11 +744,11 @@ unaryOperator
     ;
 
 postfixExpression
-    : primaryExpression postfix*
-    | postfixExpression (DOT | STRUCTACCESS) identifier postfix*  // TODO: get rid of property and postfix expression.
+    : primaryExpression ocpostfix*
+    | postfixExpression (DOT | STRUCTACCESS) identifier ocpostfix*  // TODO: get rid of property and ocpostfix expression.
     ;
 
-postfix
+ocpostfix
     : LBRACK expression RBRACK
     | LP argumentExpressionList? RP
     | LP (COMMA | macroArguments+=~RP)+ RP
