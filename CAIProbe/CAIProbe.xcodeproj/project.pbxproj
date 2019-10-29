@@ -18,9 +18,9 @@
 		4BA98BF92366B3B9005CCE62 /* CAIProbeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BF82366B3B9005CCE62 /* CAIProbeUITests.swift */; };
 		4BA98C0D2366B4B2005CCE62 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C0C2366B4B2005CCE62 /* Aspects.m */; };
 		4BA98C112366B71E005CCE62 /* Probe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C102366B71E005CCE62 /* Probe.swift */; };
-		4BA98C132366C53F005CCE62 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C122366C53F005CCE62 /* Utils.swift */; };
 		4BA98C162366C798005CCE62 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C152366C798005CCE62 /* Model.swift */; };
 		4BA98C1C2366EF8B005CCE62 /* AopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C1B2366EF8B005CCE62 /* AopManager.swift */; };
+		4BA98C1F23683DF5005CCE62 /* CAIProbeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +60,10 @@
 		4BA98C0B2366B4B2005CCE62 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
 		4BA98C0C2366B4B2005CCE62 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		4BA98C102366B71E005CCE62 /* Probe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probe.swift; sourceTree = "<group>"; };
-		4BA98C122366C53F005CCE62 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4BA98C152366C798005CCE62 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4BA98C1B2366EF8B005CCE62 /* AopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AopManager.swift; sourceTree = "<group>"; };
+		4BA98C1D23683DF5005CCE62 /* CAIProbeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIProbeUtils.h; sourceTree = "<group>"; };
+		4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIProbeUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +153,9 @@
 				4BA98C0C2366B4B2005CCE62 /* Aspects.m */,
 				4BA98C072366B475005CCE62 /* CAIProbe-Bridging-Header.h */,
 				4BA98C102366B71E005CCE62 /* Probe.swift */,
-				4BA98C122366C53F005CCE62 /* Utils.swift */,
 				4BA98C1B2366EF8B005CCE62 /* AopManager.swift */,
+				4BA98C1D23683DF5005CCE62 /* CAIProbeUtils.h */,
+				4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -291,11 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA98C1F23683DF5005CCE62 /* CAIProbeUtils.m in Sources */,
 				4BA98BDB2366B3B8005CCE62 /* ViewController.swift in Sources */,
 				4BA98C112366B71E005CCE62 /* Probe.swift in Sources */,
 				4BA98C162366C798005CCE62 /* Model.swift in Sources */,
 				4BA98BD72366B3B8005CCE62 /* AppDelegate.swift in Sources */,
-				4BA98C132366C53F005CCE62 /* Utils.swift in Sources */,
 				4BA98BD92366B3B8005CCE62 /* SceneDelegate.swift in Sources */,
 				4BA98C1C2366EF8B005CCE62 /* AopManager.swift in Sources */,
 				4BA98C0D2366B4B2005CCE62 /* Aspects.m in Sources */,

@@ -45,11 +45,11 @@ class Probe: NSObject {
 
 extension Probe: AopManangerDelegate {
     func afterInvocation(info: AspectInfo, userInfo: Any) {
-        if let event = userInfo as? Event,
-            let delegate = delegate {
-            let newEvent: Event = event.mutableCopy() as! Event
-            newEvent.handle(info: info)
-            delegate.on(vent: newEvent)
+        if let event = userInfo as? Event
+//            ,let delegate = delegate
+        {
+            event.handle(info: info)
+            delegate?.on(vent: event)
         }
     }
 }
