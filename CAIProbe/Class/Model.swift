@@ -33,7 +33,11 @@ class Event: ProbeModel,Codable {
                 res[keyPath.id] = value as AnyObject
             }
         }
-        return nil
+        if res.count > 0 {
+            return res
+        }else{
+            return nil
+        }
     }
 }
 
@@ -110,6 +114,10 @@ class KeyPath: ProbeModel,Codable {
                         if let value = value as? NSObjectProtocol {
                             return value.description
                         }
+                    }else{
+                        if let value = object as? NSObjectProtocol {
+                            return value.description
+                        }
                     }
                 }
             }
@@ -119,7 +127,11 @@ class KeyPath: ProbeModel,Codable {
                 let cls = NSClassFromString(className)
             {
                 let sel = NSSelectorFromString(selector)
-                let signature = cls.instanceMethod(for: sel)
+                if let object = CAIProbeUtils.object(for: cls, selector: sel, keyPath: parser.valueKeyPath ?? "") {
+                    if let value = object as? NSObjectProtocol {
+                        return value.description
+                    }
+                }
             }
         }
         return nil

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ProbeCollect {
-    func on(vent: Event)
+    func on(log: ProbeLog)
 }
 
 class Probe: NSObject {
@@ -46,10 +46,10 @@ class Probe: NSObject {
 extension Probe: AopManangerDelegate {
     func afterInvocation(info: AspectInfo, userInfo: Any) {
         if let event = userInfo as? Event
-//            ,let delegate = delegate
+            ,let delegate = delegate
         {
-            event.handle(info: info)
-            delegate?.on(vent: event)
+            let log = ProbeLog(event: event, res: event.handle(info: info))
+            delegate.on(log: log)
         }
     }
 }

@@ -8,16 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface CAIProbeUtils : NSObject
 
-+ (id)objectForClass:(Class)aclass selector:(SEL)selector keyPath:(NSString *)keyPath;
-+ (id)objectForInstance:(id)instance keyPath:(NSString *)keyPath;
-+ (NSString *)urlEncodeString:(NSString *)str;
-+ (void)createFilePath:(NSString *)path;
-+ (NSString*)md5ForPath:(NSString*)path;
++ (id _Nullable)objectForClass:(Class _Nullable)aclass selector:(SEL _Nullable)selector keyPath:(NSString *_Nullable)keyPath;
++ (id _Nullable)objectForInstance:(id _Nullable)instance keyPath:(NSString *_Nullable)keyPath;
 
 @end
-
-NS_ASSUME_NONNULL_END

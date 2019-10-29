@@ -9,10 +9,22 @@
         "classPath": "UIViewController",
         "selector": "viewDidLoad",
         "keyPaths": [{
-            "type": 1,
+            "type": 0,
             "version": "version",
             "id": "id",
             "keyPath": "0"
-        }]
+        },]
+    },{
+        "type": 1,
+        "version": "version",
+        "id": "id1",
+        "classPath": "UIViewController",
+        "selector": "viewWillAppear:",
+        "keyPaths": [{
+            "type": 0,
+            "version": "version",
+            "id": "title",
+            "keyPath": "0.title"
+        },]
     }]
 }

@@ -9,6 +9,8 @@
 import UIKit
 
 @UIApplicationMain
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         do{
             let json = try String(contentsOfFile: Bundle.main.path(forResource: "plan", ofType: "json") ?? "")
+            Probe.share.delegate = self
             Probe.share.addPlanJson(json: json)
         }catch{
             
@@ -42,3 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate : ProbeCollect {
+    func on(log: ProbeLog) {
+        print(log.res as Any)
+    }
+}
