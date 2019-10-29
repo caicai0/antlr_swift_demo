@@ -9,37 +9,35 @@
 import Foundation
 
 protocol ProbeCollect {
-    func on(info : AspectInfo,plan: Plan)
+    func on(vent: Event)
 }
 
-//探针
 class Probe: NSObject {
     static let share = Probe()
     var onceTime = 1.0
-    var plans = [Plan]()
-    var tokens = [AspectToken]()
+    var plan = Plan()
     var delegate : ProbeCollect? = nil
     
-    func serializeJson(json: String) -> [Dictionary<String, Any>]? {
+    func addPlanJson(json: String) {
         do{
             let data = json.data(using: .utf8)
-            let plans = try JSONDecoder().decode([Plan].self, from: data!)
-            self.plans.append(contentsOf: plans)
+            let plan = try JSONDecoder().decode(Plan.self, from: data!)
+            self.plan = plan
+            analysisAllEvents()
         }catch{
-            
+            print(error)
         }
-        return nil
     }
     
-    func analysisAllPlans() {
+    func analysisAllEvents() {
         AopManager.share.delegate = self
         AopManager.share.removeAllTokens()
         
-        for plan in self.plans {
-            if plan.type == 0 {
+        for event in self.plan.events {
+            if event.type == 0 {
                 //一次性统计
-            }else if plan.type == 1 || plan.type == 2 {
-                AopManager.share.addAop(cls: plan.classPath, sel: plan.selector, userInfo: plan)
+            }else if event.type == 1 || event.type == 2 {
+                AopManager.share.addAop(cls: event.classPath, sel: event.selector, userInfo: event)
             }
         }
     }
@@ -47,8 +45,11 @@ class Probe: NSObject {
 
 extension Probe: AopManangerDelegate {
     func afterInvocation(info: AspectInfo, userInfo: Any) {
-        if let plan = userInfo as? Plan {
-            
+        if let event = userInfo as? Event,
+            let delegate = delegate {
+            let newEvent: Event = event.mutableCopy() as! Event
+            newEvent.handle(info: info)
+            delegate.on(vent: newEvent)
         }
     }
 }

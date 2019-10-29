@@ -1,0 +1,18 @@
+{
+    "version": "0",
+    "onceEventDelayTime": 0.0,
+    "apiTimeSpace": 0.0,
+    "events": [{
+        "type": 1,
+        "version": "version",
+        "id": "id",
+        "classPath": "UIViewController",
+        "selector": "viewDidLoad",
+        "keyPaths": [{
+            "type": 1,
+            "version": "version",
+            "id": "id",
+            "keyPath": "0"
+        }]
+    }]
+}

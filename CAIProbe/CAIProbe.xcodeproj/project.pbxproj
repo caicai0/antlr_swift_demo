@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2808002367DA060061D778 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B2807FF2367DA060061D778 /* plan.json */; };
 		4BA98BD72366B3B8005CCE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BD62366B3B8005CCE62 /* AppDelegate.swift */; };
 		4BA98BD92366B3B8005CCE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BD82366B3B8005CCE62 /* SceneDelegate.swift */; };
 		4BA98BDB2366B3B8005CCE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BDA2366B3B8005CCE62 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B2807FF2367DA060061D778 /* plan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
 		4BA98BD32366B3B8005CCE62 /* CAIProbe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAIProbe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA98BD62366B3B8005CCE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BA98BD82366B3B8005CCE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				4BA98BDF2366B3B8005CCE62 /* Assets.xcassets */,
 				4BA98BE12366B3B8005CCE62 /* LaunchScreen.storyboard */,
 				4BA98BE42366B3B8005CCE62 /* Info.plist */,
+				4B2807FF2367DA060061D778 /* plan.json */,
 			);
 			path = CAIProbe;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2808002367DA060061D778 /* plan.json in Resources */,
 				4BA98BE32366B3B8005CCE62 /* LaunchScreen.storyboard in Resources */,
 				4BA98BE02366B3B8005CCE62 /* Assets.xcassets in Resources */,
 				4BA98BDE2366B3B8005CCE62 /* Main.storyboard in Resources */,

@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do{
+            let json = try String(contentsOfFile: Bundle.main.path(forResource: "plan", ofType: "json") ?? "")
+            Probe.share.addPlanJson(json: json)
+        }catch{
+            
+        }
+        
         return true
     }
 

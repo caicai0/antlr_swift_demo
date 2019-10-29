@@ -28,11 +28,15 @@ class AopManager {
         if let aclass = NSClassFromString(cls){
             let selector = NSSelectorFromString(sel)
             do{
-                let token = try aclass.aspect_hook(selector, with: [], usingBlock: { (info: AspectInfo) in
-                    DispatchQueue.global().async {
-                        self.afterInvocation(info: info, userInfo: userInfo)
+                let block: @convention(block) (AnyObject) -> Void = {
+                    info in
+                    if let aspectInfo = info as? AspectInfo {
+                        DispatchQueue.global().async {
+                            self.afterInvocation(info: aspectInfo, userInfo: userInfo)
+                        }
                     }
-                })
+                }
+                let token = try aclass.aspect_hook(selector, with: [], usingBlock:block)
                 self.tokens.append(token)
             }catch{
                 print(error)

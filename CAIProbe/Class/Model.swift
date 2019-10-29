@@ -1,5 +1,5 @@
 //
-//  Plan.swift
+//  event.swift
 //  CAIProbe
 //
 //  Created by liyufeng on 2019/10/28.
@@ -8,28 +8,50 @@
 
 import Foundation
 
-class Plan: NSObject,Codable {
+class ProbeModel: NSObject {
+    var userInfo : [String:AnyObject]? = nil
+}
+
+class Plan: ProbeModel,Codable {
+    var version = ""
+    var onceEventDelayTime = 0.0 //单次事件触发延迟事件
+    var apiTimeSpace = 0.0 //接口调用时间间隔
+    var events = [Event]()
+}
+
+class Event: ProbeModel,Codable {
     var type = 0
     var version = ""
     var id = ""
     var classPath = ""
     var selector = ""
     var keyPaths = [KeyPath]()
+    
+    func handle(info: AspectInfo){
+        for keyPath in keyPaths {
+            keyPath.handle(info: info)
+        }
+    }
 }
 
-class KeyPath: NSObject,Codable {
+class KeyPath: ProbeModel,Codable {
     var type = 0
     var version = ""
     var id = ""
     var keyPath = ""
+    var value : String? = nil
+    
+    func handle(info: AspectInfo) {
+        
+    }
 }
 
-class ProbeLog: NSObject {
-    var plan : Plan
-    var res : [String:Any]
+class ProbeLog: ProbeModel {
+    var event : Event
+    var res : [String:Any]?
     
-    init(plan: Plan, res: [String:Any]) {
-        self.plan = plan
+    init(event: Event, res: [String:Any]?) {
+        self.event = event
         self.res = res
         super.init()
     }

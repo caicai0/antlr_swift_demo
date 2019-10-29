@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Probe.share.serializeJson(json: "[]")
         // Do any additional setup after loading the view.
     }
 }
