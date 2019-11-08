@@ -40,16 +40,16 @@ code
     ;
 
 directive
-    : (IMPORT | INCLUDE) directive_text             #preprocessorImport
-    | IF preprocessor_expression                    #preprocessorConditional
-    | ELIF preprocessor_expression                  #preprocessorConditional
-    | ELSE                                          #preprocessorConditional
-    | ENDIF                                         #preprocessorConditional
-    | IFDEF CONDITIONAL_SYMBOL                      #preprocessorDef
-    | IFNDEF CONDITIONAL_SYMBOL                     #preprocessorDef
-    | UNDEF CONDITIONAL_SYMBOL                      #preprocessorDef
-    | PRAGMA directive_text                         #preprocessorPragma
-    | ERROR directive_text                          #preprocessorError
+    : (IMPORT | INCLUDE) directive_text             #preprocessorImport 引用或包含预处理文本
+    | IF preprocessor_expression                    #preprocessorConditional if 预处理指令
+    | ELIF preprocessor_expression                  #preprocessorConditional elif 预处理指令
+    | ELSE                                          #preprocessorConditional else
+    | ENDIF                                         #preprocessorConditional endif
+    | IFDEF CONDITIONAL_SYMBOL                      #preprocessorDef    ifdef
+    | IFNDEF CONDITIONAL_SYMBOL                     #preprocessorDef    ifndef
+    | UNDEF CONDITIONAL_SYMBOL                      #preprocessorDef    undef
+    | PRAGMA directive_text                         #preprocessorPragma PRAGMA
+    | ERROR directive_text                          #preprocessorError  错误uyue'ju
     | DEFINE CONDITIONAL_SYMBOL directive_text?     #preprocessorDefine
     ;
 
@@ -57,17 +57,17 @@ directive_text
     : TEXT+
     ;
 
-preprocessor_expression
-    : TRUE                                                                   #preprocessorConstant
-    | FALSE                                                                  #preprocessorConstant
-    | DECIMAL_LITERAL                                                        #preprocessorConstant
-    | DIRECTIVE_STRING                                                       #preprocessorConstant
-    | CONDITIONAL_SYMBOL (LPAREN preprocessor_expression RPAREN)?            #preprocessorConditionalSymbol
+preprocessor_expression #预处理指令
+    : TRUE                                                                   #preprocessorConstant 真
+    | FALSE                                                                  #preprocessorConstant 假
+    | DECIMAL_LITERAL                                                        #preprocessorConstant 十进制数字
+    | DIRECTIVE_STRING                                                       #preprocessorConstant 条件符号
+    | CONDITIONAL_SYMBOL (LPAREN preprocessor_expression RPAREN)?            #preprocessorConditionalSymbol 条件语句
     | LPAREN preprocessor_expression RPAREN                                  #preprocessorParenthesis
-    | BANG preprocessor_expression                                           #preprocessorNot
-    | preprocessor_expression op=(EQUAL | NOTEQUAL) preprocessor_expression  #preprocessorBinary
-    | preprocessor_expression op=AND preprocessor_expression                 #preprocessorBinary
-    | preprocessor_expression op=OR preprocessor_expression                  #preprocessorBinary
-    | preprocessor_expression op=(LT | GT | LE | GE) preprocessor_expression #preprocessorBinary
-    | DEFINED (CONDITIONAL_SYMBOL | LPAREN CONDITIONAL_SYMBOL RPAREN)        #preprocessorDefined
+    | BANG preprocessor_expression                                           #preprocessorNot 否
+    | preprocessor_expression op=(EQUAL | NOTEQUAL) preprocessor_expression  #preprocessorBinary 等于或不等于
+    | preprocessor_expression op=AND preprocessor_expression                 #preprocessorBinary 并且
+    | preprocessor_expression op=OR preprocessor_expression                  #preprocessorBinary 或
+    | preprocessor_expression op=(LT | GT | LE | GE) preprocessor_expression #preprocessorBinary < > <= >=
+    | DEFINED (CONDITIONAL_SYMBOL | LPAREN CONDITIONAL_SYMBOL RPAREN)        #preprocessorDefined define 添加语句 或 条件语句
     ;
