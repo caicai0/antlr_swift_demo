@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol AopManangerDelegate {
+protocol AopManangerDelegate : class {
     func afterInvocation(info: AspectInfo,userInfo: Any)
 }
 
 class AopManager {
     static let share = AopManager()
     var tokens = [AspectToken]()
-    var delegate: AopManangerDelegate? = nil
+    weak var delegate: AopManangerDelegate? = nil
     
     func removeAllTokens() {
         for token in tokens {

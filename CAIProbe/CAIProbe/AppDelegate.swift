@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         do{
             let json = try String(contentsOfFile: Bundle.main.path(forResource: "plan", ofType: "json") ?? "")
-            Probe.share.delegate = self
-            Probe.share.addPlanJson(json: json)
+//            Probe.share.delegate = self
+//            Probe.share.addPlanJson(json: json)
+            CAIProbe.default()?.delegate = self
+            CAIProbe.default()?.loadPlanJson(json)
         }catch{
             
         }
@@ -47,6 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate : ProbeCollect {
     func on(log: ProbeLog) {
+        print(log.res as Any)
+    }
+}
+
+extension AppDelegate : CAIProbeDelegate {
+    func onLog(_ log: CAIPLog!) {
         print(log.res as Any)
     }
 }

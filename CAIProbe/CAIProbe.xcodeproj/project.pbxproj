@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4B2808002367DA060061D778 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B2807FF2367DA060061D778 /* plan.json */; };
+		4B91B51D23868B2B00D30398 /* CAIProbe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B51C23868B2B00D30398 /* CAIProbe.m */; };
+		4B91B52123868C6D00D30398 /* CAIPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52023868C6D00D30398 /* CAIPModel.m */; };
+		4B91B52423868CCF00D30398 /* CAIPPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52323868CCF00D30398 /* CAIPPlan.m */; };
+		4B91B52723868D6700D30398 /* CAIPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52623868D6700D30398 /* CAIPEvent.m */; };
+		4B91B52A23868DBE00D30398 /* CAIPKeyPathParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52923868DBE00D30398 /* CAIPKeyPathParser.m */; };
+		4B91B52D23868DD800D30398 /* CAIPKeyPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52C23868DD800D30398 /* CAIPKeyPath.m */; };
+		4B91B53023868DFA00D30398 /* CAIPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91B52F23868DFA00D30398 /* CAIPLog.m */; };
 		4BA98BD72366B3B8005CCE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BD62366B3B8005CCE62 /* AppDelegate.swift */; };
 		4BA98BD92366B3B8005CCE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BD82366B3B8005CCE62 /* SceneDelegate.swift */; };
 		4BA98BDB2366B3B8005CCE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98BDA2366B3B8005CCE62 /* ViewController.swift */; };
@@ -21,6 +28,8 @@
 		4BA98C162366C798005CCE62 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C152366C798005CCE62 /* Model.swift */; };
 		4BA98C1C2366EF8B005CCE62 /* AopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C1B2366EF8B005CCE62 /* AopManager.swift */; };
 		4BA98C1F23683DF5005CCE62 /* CAIProbeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */; };
+		4BD724CB2387A68900D5C399 /* CAIDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD724CA2387A68900D5C399 /* CAIDecoder.m */; };
+		4BD724CE2387BE8300D5C399 /* CAIPAOPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD724CD2387BE8300D5C399 /* CAIPAOPManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,20 @@
 
 /* Begin PBXFileReference section */
 		4B2807FF2367DA060061D778 /* plan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
+		4B91B51B23868B2B00D30398 /* CAIProbe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIProbe.h; sourceTree = "<group>"; };
+		4B91B51C23868B2B00D30398 /* CAIProbe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIProbe.m; sourceTree = "<group>"; };
+		4B91B51F23868C6D00D30398 /* CAIPModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPModel.h; sourceTree = "<group>"; };
+		4B91B52023868C6D00D30398 /* CAIPModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPModel.m; sourceTree = "<group>"; };
+		4B91B52223868CCF00D30398 /* CAIPPlan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPPlan.h; sourceTree = "<group>"; };
+		4B91B52323868CCF00D30398 /* CAIPPlan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPPlan.m; sourceTree = "<group>"; };
+		4B91B52523868D6700D30398 /* CAIPEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPEvent.h; sourceTree = "<group>"; };
+		4B91B52623868D6700D30398 /* CAIPEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPEvent.m; sourceTree = "<group>"; };
+		4B91B52823868DBE00D30398 /* CAIPKeyPathParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPKeyPathParser.h; sourceTree = "<group>"; };
+		4B91B52923868DBE00D30398 /* CAIPKeyPathParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPKeyPathParser.m; sourceTree = "<group>"; };
+		4B91B52B23868DD800D30398 /* CAIPKeyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPKeyPath.h; sourceTree = "<group>"; };
+		4B91B52C23868DD800D30398 /* CAIPKeyPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPKeyPath.m; sourceTree = "<group>"; };
+		4B91B52E23868DFA00D30398 /* CAIPLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPLog.h; sourceTree = "<group>"; };
+		4B91B52F23868DFA00D30398 /* CAIPLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPLog.m; sourceTree = "<group>"; };
 		4BA98BD32366B3B8005CCE62 /* CAIProbe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAIProbe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA98BD62366B3B8005CCE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BA98BD82366B3B8005CCE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +87,11 @@
 		4BA98C1B2366EF8B005CCE62 /* AopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AopManager.swift; sourceTree = "<group>"; };
 		4BA98C1D23683DF5005CCE62 /* CAIProbeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIProbeUtils.h; sourceTree = "<group>"; };
 		4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIProbeUtils.m; sourceTree = "<group>"; };
+		4BD724C823877B3100D5C399 /* CAIProbeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIProbeDelegate.h; sourceTree = "<group>"; };
+		4BD724C92387A68800D5C399 /* CAIDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIDecoder.h; sourceTree = "<group>"; };
+		4BD724CA2387A68900D5C399 /* CAIDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIDecoder.m; sourceTree = "<group>"; };
+		4BD724CC2387BE8300D5C399 /* CAIPAOPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAIPAOPManager.h; sourceTree = "<group>"; };
+		4BD724CD2387BE8300D5C399 /* CAIPAOPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAIPAOPManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +119,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B91B51A23868B0A00D30398 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				4BD724C723877AF500D5C399 /* Protocol */,
+				4B91B51E23868C4400D30398 /* Model */,
+				4B91B51B23868B2B00D30398 /* CAIProbe.h */,
+				4B91B51C23868B2B00D30398 /* CAIProbe.m */,
+				4BD724C92387A68800D5C399 /* CAIDecoder.h */,
+				4BD724CA2387A68900D5C399 /* CAIDecoder.m */,
+				4BD724CC2387BE8300D5C399 /* CAIPAOPManager.h */,
+				4BD724CD2387BE8300D5C399 /* CAIPAOPManager.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		4B91B51E23868C4400D30398 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B91B51F23868C6D00D30398 /* CAIPModel.h */,
+				4B91B52023868C6D00D30398 /* CAIPModel.m */,
+				4B91B52223868CCF00D30398 /* CAIPPlan.h */,
+				4B91B52323868CCF00D30398 /* CAIPPlan.m */,
+				4B91B52523868D6700D30398 /* CAIPEvent.h */,
+				4B91B52623868D6700D30398 /* CAIPEvent.m */,
+				4B91B52823868DBE00D30398 /* CAIPKeyPathParser.h */,
+				4B91B52923868DBE00D30398 /* CAIPKeyPathParser.m */,
+				4B91B52B23868DD800D30398 /* CAIPKeyPath.h */,
+				4B91B52C23868DD800D30398 /* CAIPKeyPath.m */,
+				4B91B52E23868DFA00D30398 /* CAIPLog.h */,
+				4B91B52F23868DFA00D30398 /* CAIPLog.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4BA98BCA2366B3B8005CCE62 = {
 			isa = PBXGroup;
 			children = (
+				4B91B51A23868B0A00D30398 /* OC */,
 				4BA98C062366B458005CCE62 /* Class */,
 				4BA98BD52366B3B8005CCE62 /* CAIProbe */,
 				4BA98BEC2366B3B9005CCE62 /* CAIProbeTests */,
@@ -158,6 +221,14 @@
 				4BA98C1E23683DF5005CCE62 /* CAIProbeUtils.m */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		4BD724C723877AF500D5C399 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4BD724C823877B3100D5C399 /* CAIProbeDelegate.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,14 +364,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B91B52723868D6700D30398 /* CAIPEvent.m in Sources */,
 				4BA98C1F23683DF5005CCE62 /* CAIProbeUtils.m in Sources */,
 				4BA98BDB2366B3B8005CCE62 /* ViewController.swift in Sources */,
+				4BD724CE2387BE8300D5C399 /* CAIPAOPManager.m in Sources */,
+				4B91B53023868DFA00D30398 /* CAIPLog.m in Sources */,
 				4BA98C112366B71E005CCE62 /* Probe.swift in Sources */,
 				4BA98C162366C798005CCE62 /* Model.swift in Sources */,
 				4BA98BD72366B3B8005CCE62 /* AppDelegate.swift in Sources */,
+				4B91B51D23868B2B00D30398 /* CAIProbe.m in Sources */,
 				4BA98BD92366B3B8005CCE62 /* SceneDelegate.swift in Sources */,
+				4B91B52A23868DBE00D30398 /* CAIPKeyPathParser.m in Sources */,
+				4BD724CB2387A68900D5C399 /* CAIDecoder.m in Sources */,
+				4B91B52423868CCF00D30398 /* CAIPPlan.m in Sources */,
 				4BA98C1C2366EF8B005CCE62 /* AopManager.swift in Sources */,
+				4B91B52123868C6D00D30398 /* CAIPModel.m in Sources */,
 				4BA98C0D2366B4B2005CCE62 /* Aspects.m in Sources */,
+				4B91B52D23868DD800D30398 /* CAIPKeyPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,8 +554,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F685LX6UR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CAIProbe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,6 +564,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstore.CAIProbe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Class/CAIProbe-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -495,8 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F685LX6UR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CAIProbe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,6 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appstore.CAIProbe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Class/CAIProbe-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

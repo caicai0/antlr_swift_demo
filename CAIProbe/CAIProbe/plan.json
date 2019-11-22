@@ -5,25 +5,25 @@
     "events": [{
         "type": 1,
         "version": "version",
-        "id": "id",
+        "ID": "ID",
         "classPath": "UIViewController",
-        "selector": "viewDidLoad",
+        "selector": "viewDIDLoad",
         "keyPaths": [{
             "type": 0,
             "version": "version",
-            "id": "id",
+            "ID": "ID",
             "keyPath": "0"
         },]
     },{
         "type": 1,
         "version": "version",
-        "id": "id1",
+        "ID": "ID1",
         "classPath": "UIViewController",
         "selector": "viewWillAppear:",
         "keyPaths": [{
             "type": 0,
             "version": "version",
-            "id": "title",
+            "ID": "title",
             "keyPath": "0.title"
         },]
     }]

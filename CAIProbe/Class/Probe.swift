@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProbeCollect {
+protocol ProbeCollect : class {
     func on(log: ProbeLog)
 }
 
@@ -16,7 +16,7 @@ class Probe: NSObject {
     static let share = Probe()
     var onceTime = 1.0
     var plan = Plan()
-    var delegate : ProbeCollect? = nil
+    weak var delegate : ProbeCollect? = nil
     
     func addPlanJson(json: String) {
         do{

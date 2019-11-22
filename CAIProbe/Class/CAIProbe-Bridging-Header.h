@@ -4,3 +4,4 @@
 
 #import "Aspects.h"
 #import "CAIProbeUtils.h"
+#import "CAIProbe.h"
